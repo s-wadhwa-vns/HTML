@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [hello] {
+            color: pink;
+        }
+
+        [type=text] {
+            color: red;
+        }
+
+        [type=number] {
+            color: lightblue;
+        }
+
+        a[href*="www.XYZ.com"] {
+            background-color: black;
+            color: White;
+        }
+
+        *:hover {
+            border-color: black;
+            border-width: 20px;
+            border-style: ridge;
+            width: 100%;
+        }
+
+        a[href*="letter"] {
+            background-color: blueviolet;
+            color: black;
+        }
+
+        a[href$=".org"] {
+            background-color: brown;
+            color: bisque;
+        }
+
+        h1[class~="logo"] {
+            padding: 20px;
+            background-color: pink;
+            border-color: red;
+            border-style: ridge;
+            width: fit-content;
+
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>H1 with no attribute</h1>
+    <h1>SHAMBHUNATH</h1>
+    <h1 hello="">H1 with hello attributw</h1>
+    <div hello="hjhj">
+
+        <h1>SHAMBHUNATH</h1>
+
+        Hello Div
+
+    </div>
+    <input type="text" />
+    <input type="number" />
+    <a href="www.XYZ.com">ALphabet</a>
+    <a href="www.letter.com">Letter B</a>
+    <a href="www.xyzz.org">Shambhu</a>
+    <h1 class="logo">Hello logo class</h1>
+</body>
+
+</html>

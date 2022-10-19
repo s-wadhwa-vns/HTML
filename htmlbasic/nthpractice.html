@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        width: fit-content;
+        background-color: blueviolet;
+    }
+
+    li li {
+        width: fit-content;
+        background-color: bisque;
+    }
+
+    li li li {
+        background-color: aqua;
+        width: fit-content;
+    }
+
+    li:nth-child(-n+8) {
+        color: red;
+        border-color: brown;
+        border-style: solid;
+        margin-bottom: 1px;
+    }
+
+    ul:nth-child(-n+5) {
+        color: blue;
+        border-style: solid;
+        border-color: black;
+    }
+</style>
+
+<body>
+    <ol>
+        <li>ONE</li>
+        <li>TWO</li>
+        <li>THREE
+            <ul>
+                <li>Three.one
+                    <ul type="square">
+                        <li>Three.one.one</li>
+                        <li>Three.one.two</li>
+                        <li>Three.one.three</li>
+                        <li>Three.one.four</li>
+                        <li>Three.one.five</li>
+                    </ul>
+                </li>
+                <li>Three.two</li>
+                <li>Three.three</li>
+                <li>three.four</li>
+                <li>Three.five</li>
+            </ul>
+        </li>
+        <li>FOUR</li>
+        <li>FIVE</li>
+        <li>SIX</li>
+        <li>SEVEN</li>
+        <li>EIGHT</li>
+
+
+    </ol>
+
+</body>
+
+</html>
