@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <script>
+        function f1() {
+            //close();
+            let ta = document.getElementById("A");
+            console.log(ta);
+            // ta.value="90";
+
+            let tb = document.getElementById("B");
+            //tb.value="120";
+
+            let tc = document.getElementById("C");
+            tc.value = Number(ta.value) + Number(tb.value);
+
+        }
+
+        function f2() {
+
+            let tx = document.getElementById("X");
+
+            let ty = document.getElementById("Y");
+
+            let tz = document.getElementById("Z");
+            tz.value = Number(tx.value) - Number(ty.value);
+        }
+    </script>
+</head>
+
+<body>
+    <Label>A :</Label>
+    <input id="A" placeholder="A" type="number"> <br>
+    <Label>B :</Label>
+    <input id="B" placeholder="B" type="number"> <br>
+    <Label>C :</Label>
+    <input id="C" placeholder="C" readonly type="number"> <br>
+    <button onclick="f1()" value="Submit">ADD</button>
+
+    <hr>
+
+    <label>X :</label>
+    <input id="X" placeholder="X" required type="Number"> <br>
+    <label>Y :</label>
+    <input id="Y" placeholder="Y" required type="Number"> <br>
+    <label>Z :</label>
+    <input id="Z" placeholder="Z" readonly type="Number"> <br>
+    <button onclick="f2()" type="submit">MINUS</button>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD or MINUS</title>
+</head>
+<script>
+    function calculate() {
+    let selectedoption="none";
+    console.log(document.getElementById("ra").checked);
+    console.log(document.getElementById("rb").checked);
+    if (document.getElementById("ra").checked)
+    selectedoption="add";
+
+    if(document.getElementById("rb").checked)
+    selectedoption="sub";
+    let na= document.getElementById("A");
+    let nb =document.getElementById("B");
+    let nc= document.getElementById("C")
+    if(selectedoption=="none")
+    {
+        alert("Nothing")
+    }
+    if(selectedoption=="add")
+    {
+nc.value = Number(na.value)+Number(nb.value);
+    }
+    if(selectedoption=="sub")
+    {    
+nc.value = Number(na.value)-Number(nb.value);
+    }
+    }
+
+</script>
+
+<body>
+    <label>A :</label>
+    <input id="A" required placeholder="A" type="number"><br>
+    <label>B :</label>
+    <input id="B" required placeholder="B" type="number"><br>
+    <label>C :</label>
+    <input id="C" readonly placeholder="C" type="number"><br>
+    <label>ADD Or MINUS</label><br><br>
+   Add <input name="operation" id="ra" type="radio" class="ADD OR MINUS">
+   Sub <input name="operation" id="rb" type="radio" class="ADD OR MINUS"><br>
+    <button onclick="calculate()" type="submit">ACTION</button>
+</body>
+
+</html>
