@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roses Picture</title>
+    <script>
+        var counter=0;
+function f1(){
+document.getElementById('h').innerHTML=counter;
+counter++;
+}
+setInterval("f1()",1000);
+
+
+    </script>
+</head>
+<body>
+    <h1 id="h"></h1>
+    <table  border="1">
+    <tr>
+        <td><img id="p0" src="../pics/Black Rose.jpg"> </td>
+        <td><img id="p1" width="200 px" height="300 px" src="../pics/Blue Rose.jpg"></td>
+        <td><img id="p2" width="200px" height="300px" src="../pics/Pink Rose.jpg"></td>
+        <td><img id="p3" src="../pics/Red Roses.jpg"></td>
+        <td><img id="p4" src="../pics/White Rose.jpg"></td>
+    </tr>
+</table>
+</body>
+</html>

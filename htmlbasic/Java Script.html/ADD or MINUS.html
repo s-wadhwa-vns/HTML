@@ -9,17 +9,16 @@
 </head>
 <script>
     function calculate() {
-    let selectedoption="none";
-    console.log(document.getElementById("ra").checked);
-    console.log(document.getElementById("rb").checked);
+    let selectedoption="none";  
     if (document.getElementById("ra").checked)
     selectedoption="add";
-
     if(document.getElementById("rb").checked)
     selectedoption="sub";
+
     let na= document.getElementById("A");
     let nb =document.getElementById("B");
     let nc= document.getElementById("C")
+        
     if(selectedoption=="none")
     {
         alert("Nothing")
