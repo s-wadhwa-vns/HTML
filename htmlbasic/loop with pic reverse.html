@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image loop Reverse</title>
+</head>
+<style>
+    img {
+        width: 200px;
+    }
+</style>
+<script>
+    const noofpics=6;
+// p5<-p4, p4<-p3, p3<-p2, p2<-p1, p1<-p0, p0<-p5
+
+function f2(){
+ //   alert("error");
+ p5=document.getElementById("p5").src;
+for(i=5; i>=1; i--){
+    document.getElementById("p" + i).src=document.getElementById("p" + (i-1)).src;
+}
+document.getElementById("p0").src=p5;
+
+ 
+// <!-- i=3;
+ //document.getElementById("p" + i).src=document.getElementById("p" + (i-1)).src; 
+}
+// setInterval("f2()", 1000);
+//setInterval(f1, 1000)
+
+
+
+
+</script>
+
+<body>
+
+    <table border="1">
+
+        <tr>
+            <td><img id="p0" src="../pics/Black Rose.jpg"></td>
+            <td><img id="p1" src="../pics/Blue Rose.jpg"></td>
+            <td><img id="p2" src="../pics/Pink Rose.jpg"></td>
+            <td><img id="p3" src="../pics/Red Roses.jpg"></td>
+            <td><img id="p4" src="../pics/White Rose.jpg"></td>
+            <td><img id="p5" src="../pics/Yellow Rose.jpg"></td>
+
+        </tr>
+
+    </table>
+    <button onclick="f2()" value="Submit">SUBMIT</button>
+
+</body>
+
+</html>

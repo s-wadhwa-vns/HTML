@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image loop</title>
+</head>
+<script>
+    function f1(){
+      khaliglass=document.getElementById("p0").src;
+            document.getElementById("p0").src=document.getElementById("p1").src;
+            document.getElementById("p1").src=khaliglass;
+    
+    }
+    setInterval("f1()" , 1000)
+</script>
+<body>
+
+    <table border="1">
+        <tr><img id="p0" src="../pics/India cricket team.webp"></tr>
+        <tr><img id="p1"src="../pics/Pakistan Cricket team.jpg"></tr>
+        <tr></tr>
+    </table>
+    
+</body>
+</html>
