@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single image on page loop </title>
+</head>
+<style>
+    .fixed{
+        position: fixed;
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+    }</style>
+
+<script>
+//p0<-p1, p1<-p2 p2<-p3, p3<-p0
+const noofpics=4;
+function f1(){
+p3 = document.getElementById("p3").src;
+for(i=noofpics-1; i>=noofpics-3; i--){
+    document.getElementById("p" + i).src=document.getElementById("p" + (i-1)).src;
+}
+document.getElementById("p0").src = p3
+}
+setInterval("f1()" , 1000);
+
+
+</script>
+
+<body>
+
+    <img id="p0" class="fixed" src="../pics/Bihar.avif">
+    <img id="p1" class="fixed" src="../pics/India cricket team.webp">
+    <img id="p2" class="fixed" src="../pics/Gaya.jpg">
+    <img id="p3" class="fixed" src="../pics/Pakistan Cricket team.jpg">
+
+    
+</body> 
+</html>
