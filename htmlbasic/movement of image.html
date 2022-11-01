@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>left to right image move</title>
+</head>
+<script>
+
+    var move=0;
+    function f1(){
+        let mv=document.getElementById("bs");
+        mv.style.left=move + "%";
+        move+=10;
+        if (move>100)
+        clearInterval(movement);
+    }
+   var movement= setInterval("f1()" , 1000);
+
+</script>
+<body>
+
+    <img id="bs" style="position: absolute; margin-top:10%; margin-left: -10%;" src="../pics/Black Rose.jpg">
+    
+</body>
+</html>
