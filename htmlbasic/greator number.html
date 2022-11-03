@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function f1(){
+        // alert("A is greator");
+        a=Number(document.getElementById("fn").value);
+        b=Number(document.getElementById("sn").value);
+        c=Number(document.getElementById("tn").value);
+/*
+   variables    < , <= , > ,>= , == , !=(not equal to)
+   a = b = 1
+   a < b - Fal
+   a <= b - Tru
+   a > b - Fal
+   a >= b - Tru
+   a == b - Tru
+   a != b- Fal
+
+   AND &&
+   C1 && C2
+
+   F && F = Fal
+   F && T = Fal 
+   T && F = Fal
+   T && T = Tru
+
+   OR || 
+   C1 || c2
+
+   F || F = Fal
+   F || T = Tru
+   T || F = Tru
+   T || T = Tru
+
+   NOT !
+  
+
+*/
+max = 0;
+        if (a > b && a > c)
+        max=a;
+        else
+        if(b > c)
+        max=b;
+        else
+        max=c;
+
+        document.getElementById("res").innerHTML=max;
+    }
+
+    function f2(){
+        x=Number(document.getElementById("fn").value);
+        y=Number(document.getElementById("sn").value);
+        z=Number(document.getElementById("tn").value);
+
+        min=0;
+
+        if(x<y && x<z)
+        min=x;
+        else 
+        if(y<z)
+        min=y;
+        else 
+        min=z;
+
+        document.getElementById("ser").innerHTML=min;
+    }
+
+    function f3(){
+                
+        a=5; b=4;
+        alert(!(a<b));
+    }
+
+</script>
+
+<body>
+    <label>First Input : <input id="fn" type="Number"></label><br>
+    <label>Second Input : <input id="sn" type="Number"></label><br>
+    <label>Third Input : <input id="tn" type="Number"></label><br>
+    <button onclick="f1()">MAX</button>
+    <button onclick="f2()">MIN</button>
+    <button onclick="f3()">NOT</button>
+    <h1 id="res"></h1>
+    <h1 id="ser"></h1>
+</body>
+
+</html>
