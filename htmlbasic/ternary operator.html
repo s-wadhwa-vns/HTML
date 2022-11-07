@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+function f1(){
+a=Number(document.getElementById("t1").value);
+b=Number(document.getElementById("t2").value);
+c=Number(document.getElementById("t3").value);
+/*var  max=0;
+if(a>=b)
+max=a;
+else
+max=b;
+*/
+//var  max=(a>=b)?a:b;
+/*var max=(a>=b)?(a>=c)?a:c:(b>=c)?b:c;
+alert(max);*/
+var min = (a<=b)?(a<=c)?a:c:(b<=c)?b:c;
+alert(min);
+
+}
+
+</script>
+    
+</head>
+
+<body>
+    <label> First value: <input id="t1" type="text"></label> <br>
+    <label> Second value: <input id="t2" type="text"></label><br>
+    <label> Third value: <input id="t3" type="text"></label><br>
+
+    <button onclick="f1()">Submit</button>
+
+</body>
+
+</html>

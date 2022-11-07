@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>month name from number of days</title>
+</head>
+<script>
+function f1 (){
+   // alert("error")
+   a=Number(document.getElementById("t1").value);
+var result;
+
+ switch (a){
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 12:
+    case 10:
+    result =("Number of day = 31");
+    break; 
+
+    case 2:
+    result =("Number of day : 28");
+    break;
+
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+    result=("Number of days : 30");
+    break;
+ }
+ alert(result);
+}
+
+</script>
+
+<body>
+    <label >Days : <input id="t1" type="number"></label>
+    <br>
+    <button onclick="f1()">Month</button>
+
+</body>
+
+</html>
