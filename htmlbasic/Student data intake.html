@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Intake two record</title>
+
+    <script>
+        var student = [{
+            Name: "Shubham Wadhwa",
+            RollNumber: "0175121051",
+            Physics: "65",
+            Chemistry: "88",
+            Math: "67",
+            //      total: function () { return Number(this.Physics) + Number(this.Chemistry) + Number(this.Math) }
+        },
+        {
+            Name: "Akash Wadhwa",
+            RollNumber: "0175121052",
+            Physics: "55",
+            Chemistry: "68",
+            Math: "97",
+        },
+        {
+            Name: "Mamta Wadhwa",
+            RollNumber: "0175841052",
+            Physics: "65",
+            Chemistry: "98",
+            Math: "100",
+
+        },
+        ];
+        var i = 0;
+     var n = student.length;
+
+     function next() {
+        document.getElementById("txtName").value = student[i].Name;
+        document.getElementById("txtRollNum").value = student[i].RollNumber;
+        document.getElementById("numPhy").value = student[i].Physics;                   // next button function
+        document.getElementById("numChe").value = student[i].Chemistry;
+        document.getElementById("nummath").value = student[i].Math;
+        if (i<n-1)
+            i++;
+            alert(i);
+    }
+
+        function back() {
+            document.getElementById("txtName").value = student[i].Name;
+            document.getElementById("txtRollNum").value = student[i].RollNumber;
+            document.getElementById("numPhy").value = student[i].Physics;                        // back Button Functionm
+            document.getElementById("numChe").value = student[i].Chemistry;
+            document.getElementById("nummath").value = student[i].Math;
+           if (i>0)
+            i--;
+            alert(i);
+        }
+    
+
+
+    </script>
+
+</head>
+
+<body>
+
+    Roll Number : <input id="txtRollNum" type="number"><br>
+    Name : <input id="txtName" type="Text"><br>
+    Subject : <br>
+    Physics :<input id="numPhy" type="number">
+    Chemistry :<input id="numChe" type="number">
+    Math: <input id="nummath" type="number"> <br>
+    <button onclick="back()">Back</button>
+    <button onclick="next()">next</button>
+    <!-- <h1 id="h1"></h1> -->
+
+</body>
+
+</html>

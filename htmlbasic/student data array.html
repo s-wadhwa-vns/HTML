@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var student = {
+            Name: "Shubham Wadhwa",
+            RollNumber: "0175121051",
+            Physics: "65",
+            Chemistry: "88",
+            Math: "67",
+            total: function () { return Number(this.Physics) + Number(this.Chemistry) + Number(this.Math) }
+        };
+
+
+        function f() {
+            document.getElementById("txtName").value = student.Name;
+            document.getElementById("txtRollNum").value = student.RollNumber;
+            document.getElementById("numPhy").value = student.Physics;
+            document.getElementById("numChe").value = student.Chemistry;
+            document.getElementById("nummath").value = student.Math;
+
+            document.getElementById("h1").innerHTML = student.total();
+        }
+
+        function f1() {
+            student.Name = document.getElementById("txtName").value;
+            student.RollNumber = document.getElementById("txtRollNum").value;
+            student.Physics = document.getElementById("numPhy").value;
+            student.Chemistry = document.getElementById("numChe").value;
+            student.Math = document.getElementById("nummath").value;
+        };
+
+
+    </script>
+</head>
+
+<body>
+    Roll Number : <input id="txtRollNum" type="number"><br>
+    Name : <input id="txtName" type="Text"><br>
+    Subject : <br>
+    Physics :<input id="numPhy" type="number">
+    Chemistry :<input id="numChe" type="number">
+    Math: <input id="nummath" type="number"> <br>
+    <button onclick="f()">Find</button>
+    <button onclick="f1()" value="set">Set</button>
+    <h1 id="h1"></h1>
+</body>
+
+</html>
