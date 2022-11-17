@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio button data save practice</title>
+</head>
+
+<script>
+
+    function Save(){
+        let Hotmen = document.getElementsByName("menu");
+        let n = Hotmen.length;
+        for (let i=0; i<=n-1; i++){
+            Menu = Hotmen[i];
+         localStorage.setItem(Menu.id , Menu.checked);
+        }
+    }
+
+    function Retrieve(){
+        let Hotmen = document.getElementsByName("menu");
+        let n = Hotmen.length;
+        for (let i=0; i<=n-1; i++){
+            Menu = Hotmen[i];
+        let MenuHot = localStorage.getItem(Menu.id);
+
+        if (MenuHot == "true")
+        document.getElementById(Menu.id).checked = true;
+        else
+        document.getElementById(Menu.id).checked = false;
+    }
+};
+</script>
+
+<body>
+    <h1>Hotel Menu</h1>
+    Matar Paneer :  <input name="menu" id="rMP" type="radio"> <br>
+    Baigan Bharta:  <input name="menu" id="rBB" type="radio"> <br>
+    Aalu Parantha : <input name="menu" id="rAP" type="radio"> <br>
+    Gobi Parantha : <input name="menu" id="rGP" type="radio"> <br>
+    Mutton :        <input name="menu" id="rM" type="radio"> <br>
+    Chicken :       <input name="menu" id="rC" type="radio"> <br>
+    Pav Bhaji :     <input name="menu" id="rPB" type="radio"> <br><br>
+
+    <button onclick="Save()">Save</button>
+    <button onclick="Retrieve()">Retrieve</button>
+</body>
+
+</html>
