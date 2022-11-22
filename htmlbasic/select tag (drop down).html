@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+<script>
+    function dropdown() {
+        //  alert("error");
+        let list = document.getElementById("sel");
+        console.log(list.selectedIndex);
+        let options = list.getElementsByTagName("option");
+        //  console.log(options.length);
+        let n = options.length;
+        for (let i = 0; i <= n - 1; i++) {
+            let option = options[i];
+            console.log(option.innerText);
+        }
+    }
+
+    function save() {
+        //  console.log("Save");
+        let lists = document.getElementById("sel");
+        let selOpt = lists.selectedIndex;
+        localStorage.setItem("selOpt", selOpt);
+    }
+
+    function retrive() {
+        let val = localStorage.getItem("selOpt");
+        let list = document.getElementById("sel");
+        list.selectedIndex = val;
+        ;
+        //  console.log(val);
+        // let Optsel = document.getElementById("sel");
+        //   console.log(Optsel.selectedIndex);
+
+    }
+</script>
+
+<body>
+
+    <select id="sel" size="4">
+        <option value="1"> JAN </option>
+        <option value="2"> FEB </option>
+        <option value="3"> MAR </option>
+        <option value="4"> APR </option>
+    </select>
+    <br>
+    <button onclick="dropdown()">Click</button>
+    <button onclick="save()">Save</button>
+    <button onclick="retrive()">Retrieve</button>
+
+</body>
+
+</html>

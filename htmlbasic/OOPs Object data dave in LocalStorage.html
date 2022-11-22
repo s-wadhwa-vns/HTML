@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data save from Object in local storage</title>
+</head>
+<script>
+
+    let Employee = [{
+        name: "Shubham Wadhwa",
+        empid: "951357",
+        project: "Salesforce",
+        address: "pune"
+    },
+    {
+        name: "Akash Wadhwa",
+        empid: "852357",
+        project: "Velocity",
+        address: "Varanasi"
+    }]
+
+    function find() {
+        let i = 0;
+        document.getElementById("txtname").value = Employee[i].name;
+        document.getElementById("numEmp").value = Employee[i].empid;
+        document.getElementById("txtpro").value = Employee[i].project;
+        document.getElementById("txtareAdd").value = Employee[i].address;
+    };
+
+    function next() {
+        let i = 0;
+        let n = Employee.length;
+        if (i <= n - 1)
+            i++;
+        document.getElementById("txtname").value = Employee[i].name;
+        document.getElementById("numEmp").value = Employee[i].empid;
+        document.getElementById("txtpro").value = Employee[i].project;
+        document.getElementById("txtareAdd").value = Employee[i].address;
+    };
+
+    function save() {
+        let name = document.getElementById("txtname").value;
+        localStorage.setItem("name", name);
+        let empid = document.getElementById("numEmp").value;
+        localStorage.setItem("empid", empid);
+        let project = document.getElementById("txtpro").value;
+        localStorage.setItem("project", project);
+        let address = document.getElementById("txtareAdd").value;
+        localStorage.setItem("address", address);
+    };
+
+    function get() {
+        let name =localStorage.getItem("name");
+        document.getElementById("txtname").value = name;
+        let empid =localStorage.getItem("empid");
+        document.getElementById("numEmp").value = empid;
+        let project =localStorage.getItem("project");
+        document.getElementById("txtpro").value = project;
+        let address =localStorage.getItem("address");
+        document.getElementById("txtareAdd").value = address;
+
+
+    };
+
+</script>
+
+<body>
+
+    Name : <input id="txtname" type="text"><br>
+    Employee ID : <input id="numEmp" type="number"><br>
+    Project : <input id="txtpro" type="text"><br>
+    Address : <textarea id="txtareAdd"></textarea> <br><br>
+
+    <button onclick="find()">Find</button>
+    <button onclick="next()">Next</button>
+    <button onclick="save()">Save</button>
+    <button onclick="get()">Get</button>
+
+
+</body>
+
+</html>
