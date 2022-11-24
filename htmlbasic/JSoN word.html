@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSon Word</title>
+</head>
+<script>
+    let Employee = [{
+        name: "Shubham Wadhwa",
+        empid: "951357",
+        project: "Salesforce",
+        address: "pune"
+    },
+    {
+        name: "Akash Wadhwa",
+        empid: "852357",
+        project: "Velocity",
+        address: "Varanasi"
+    }]
+    function jsonDemo()
+    {
+        let jsonstring=JSON.stringify(Employee);
+        console.log(jsonstring);
+        let jsonobject=JSON.parse(jsonstring);
+        console.log(jsonobject);
+    }
+</script>
+<body>
+
+    Name : <input id="txtname" type="text"><br>
+    Employee ID : <input id="numEmp" type="number"><br>
+    Project : <input id="txtpro" type="text"><br>
+    Address : <textarea id="txtareAdd"></textarea> <br><br>
+
+    <button onclick="jsonDemo()">Find</button>
+    <!-- <button onclick="next()">Next</button> -->
+    <!-- <button onclick="save()">Save</button> -->
+    <!-- <button onclick="get()">Get</button> -->
+    
+</body>
+</html>
