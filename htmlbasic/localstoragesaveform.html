@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data stored in local storage in a form</title>
+</head>
+<script>
+    function save(){
+    let name = document.getElementById("txtName").value;
+    localStorage.setItem("name" , name);
+
+    let address = document.getElementById("txtAreAdd").value;
+    localStorage.setItem("address" , address);
+
+    let months  = document.getElementById("selMon");
+    let monsel  = months.selectedIndex;
+    localStorage.setItem("monsel", monsel);
+
+    let gender = document.getElementsByName("gen");
+    let n=gender.length;
+    for(let i=0; i<=n-1; i++){
+        Gender = gender[i];
+        localStorage.setItem(Gender.id , Gender.checked);
+    }
+    };
+
+    function Retrieve(){
+     let name = localStorage.getItem("name");
+     document.getElementById("txtName").value=name;
+
+     let address = localStorage.getItem("address");
+     document.getElementById("txtAreAdd").value = address;
+
+     let months = localStorage.getItem("monsel");
+     let list = document.getElementById("selMon");
+        list.selectedIndex = months;
+
+        let gender = document.getElementsByName("gen");
+            let n=gender.length;
+    for(let i=0; i<=n-1; i++){
+        Gender = gender[i];
+        let GENDER = localStorage.getItem(Gender.id);
+        if (GENDER == "true")
+        document.getElementById(Gender.id).checked = true;
+        else
+        document.getElementById(Gender.id).checked = false;
+    }
+    };
+
+</script>
+<body>
+
+    Name :       <input id="txtName" type="text"> <br>
+    Address :    <textarea id="txtAreAdd"></textarea> <br>
+    Month :      <select id="selMon"><option value="1"> JAN </option>
+                 <option value="2"> FEB </option>
+                 <option value="3"> MAR </option> </select><br>
+    Male :       <input id="radmal" name="gen" type="radio"> 
+    Female :     <input id="radfemmal" name="gen" type="radio"> <br>
+    
+
+     <button onclick="save()">Save</button>
+     <button onclick="Retrieve()">Retrieve</button>
+
+
+
+
+    
+</body>
+</html>

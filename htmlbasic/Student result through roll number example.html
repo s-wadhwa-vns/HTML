@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student result </title>
+</head>
+<script>
+    let student = [
+        {
+            rollnumber: "123456",
+            studentname: "Shubham Wadhwa",
+            result: "PASS",
+        }, {
+            rollnumber: "234567",
+            studentname: "Akash Wadhwa",
+            result: "FAIL",
+        }, {
+            rollnumber: "345678",
+            studentname: "Sudhanshu Sinha",
+            result: "FAIL",
+        }, {
+            rollnumber: "456789",
+            studentname: "Champak Roy",
+            result: "PASS",
+        }
+    ];
+    
+    
+    function result(){
+
+        let jsonstring=JSON.stringify(student);
+        localStorage.setItem("jsonstring" , jsonstring);
+    }
+
+    function getresl(){
+
+       let data=localStorage.getItem("jsonstring");
+       let a=JSON.parse(data);
+       //console.log(a.length);
+       let RN = document.getElementById("numrn").value;
+       let n=a.length;
+     // console.log(n)
+
+     for (let i=0; i <=n-1; i++){
+
+        let st=a[i];
+      //  console.log(st);
+        if(RN==st.rollnumber)
+        {
+            console.log("found at " + i);
+            document.getElementById("txtname").value=st.studentname;
+            document.getElementById("txtres").value=st.result;
+            return;
+        }
+     }
+    
+     console.log("Not found" );
+     document.getElementById("txtname").value="Not found";
+     document.getElementById("txtres").value="Not found";
+    };
+        </script>
+
+<body>
+    Roll Number :  <input onkeyup="getresl()" id="numrn" type="number"><br>
+    Student Name : <input id="txtname" type="text"><br>
+    Result :       <input id="txtres" type="text"><br>
+    <button onclick="result()">Push Result</button>
+                   <button onclick="getresl()">Result</button>
+</body>
+
+</html>

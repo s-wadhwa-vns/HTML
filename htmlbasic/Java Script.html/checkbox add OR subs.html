@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Add or Substract</title>
+</head>
+<script>
+    function f1() {
+        let selectedoption = "";
+
+alert((document.getElementById("cb").checked));
+
+        if (document.getElementById("cb").checked)
+            selectedoption = "add";
+        else 
+        selectedoption = "Subs";
+        alert(selectedoption);
+        let fn = document.getElementById("fn");
+        let sn = document.getElementById("sn");
+        let tn = document.getElementById("tn");
+
+        
+        if (selectedoption == "add")
+        {
+            tn.value = Number(fn.value) + Number(sn.value)
+        }
+
+        if (selectedoption == "Subs")
+        {
+            tn.value = Number(fn.value) - Number(sn.value)
+        }
+    }
+</script>
+
+<body>
+
+    <label>First value :</label>
+    <input id="fn" type="number"> <br>
+    <label>Second value :</label>
+    <input id="sn" type="number"> <br>
+    <label>Calculated Value :</label>
+    <input id="tn" readonly type="number"><br>
+    If checked "ADD" if not "Substract"<br>
+    <label>Action</label> <input id="cb" type="checkbox">
+    <br>
+    <button onclick="f1()" type="submit">SUBMIT</button>
+
+</body>
+
+</html>

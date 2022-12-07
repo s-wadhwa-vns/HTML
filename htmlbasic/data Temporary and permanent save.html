@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data temporary and permanent Save</title>
+</head>
+<script>
+    function dataHold(id) {
+        let data = document.getElementById(id).value;
+        console.log(data);
+    };
+
+    function save() {
+        name = document.getElementById("txtNam").value;
+        localStorage.setItem("name", name);
+        age = document.getElementById("numAge").value;
+        localStorage.setItem("age", age);
+        day = document.getElementById("numDay").value;
+        localStorage.setItem("day", day);
+        month = document.getElementById("numMon").value;
+        localStorage.setItem("month", month);
+        year = document.getElementById("numYea").value;
+        localStorage.setItem("year", year);
+        address = document.getElementById("txtAreAdd").value;
+        localStorage.setItem("address", address);
+        let Gender = document.getElementsByName("gender");
+        let n = Gender.length;
+        for (let i = 0; i <= n - 1; i++) {
+            let gender = Gender[i];
+            localStorage.setItem(gender.id, gender.checked);
+            console.log(gender.id + ":" + gender.checked);
+        }
+    };
+
+    function retrieve() {
+        let name = localStorage.getItem("name");
+        document.getElementById("txtNam").value = name;
+        let age = localStorage.getItem("age");
+        document.getElementById("numAge").value = age;
+        let day = localStorage.getItem("day");
+        document.getElementById("numDay").value = day;
+        let month = localStorage.getItem("month");
+        document.getElementById("numMon").value = month;
+        let year = localStorage.getItem("year");
+        document.getElementById("numYea").value = year;
+        let address = localStorage.getItem("address");
+        document.getElementById("txtAreAdd").value = address;
+
+        let Gender = document.getElementsByName("gender");
+        let n = Gender.length;
+        for (let i = 0; i <= n - 1; i++) {
+            let gender = Gender[i];
+            let Gen = localStorage.getItem(gender.id);  
+            if (Gen == "true")
+            document.getElementById(gender.id).checked = true;
+            else 
+            document.getElementById(gender.id).checked = false;
+        }
+    };
+
+    function del() {
+        localStorage.removeItem("name");
+        localStorage.removeItem("age");
+        localStorage.removeItem("day");
+        localStorage.removeItem("month");
+        localStorage.removeItem("year");
+        localStorage.removeItem("address");
+
+    };
+
+
+</script>
+
+<body>
+    Name : <input id="txtNam" onkeyup="dataHold('txtNam')" type="Text"> <br>
+    Age : <input Id="numAge" onkeyup="dataHold('numAge')" type="number"> <br>
+    DOB : <input id="numDay" onkeyup="dataHold('numDay')" min="0" max="31" type="Number">
+    <input id="numMon" onkeyup="dataHold('numMon')" min="0" max="12" type="number">
+    <input id="numYea" onkeyup="dataHold('numYea')" type="Year"> <br>
+    Address : <textarea id="txtAreAdd" onkeyup="dataHold('txtAreAdd')"></textarea><br>
+    Gender : <input id="radmal" onchange="dataHold('radmal')" name="gender" type="radio"> Male
+    <input id="radfem" onchange="dataHold('radfem')" name="gender" type="radio"> Female
+    <input id="radOth" onchange="dataHold('radOth')" name="gender" type="radio"> Others <br><br>
+    <button onclick="save()">Save</button>
+    <button onclick="retrieve()">Retrieve</button>
+    <button onclick="del()">Delete</button>
+</body>
+
+</html>

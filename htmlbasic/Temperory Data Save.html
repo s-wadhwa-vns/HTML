@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Save Temporary</title>
+    <script>
+        function f(id) {
+            // console.log("hello");
+            let value = document.getElementById(id).value;
+            console.log(value);
+            localStorage.setItem(id, value);
+            // localStorage.setItem("age"  , Age);
+            // localStorage.setItem("address"  , Address);
+        };
+        function ret() {
+            let value = localStorage.getItem('txtname');
+            document.getElementById('txtname').value = value;
+            value = localStorage.getItem('numAge');
+            document.getElementById('numAge').value = value;
+            value = localStorage.getItem('txtAreAdd');
+            document.getElementById('txtAreAdd').value = value;
+        }
+    </script>
+</head>
+
+<body>
+    Name : <input id="txtname" onkeyup="f('txtname')" type="Text"> <br>
+    Age : <input id="numAge" onkeyup="f('numAge')" type="number"> <br>
+    Address : <textarea id="txtAreAdd" onkeyup="f('txtAreAdd')"></textarea> <br>
+    <button onclick="ret()">Retrieve</button>
+    <script>
+        ret();
+    </script>
+</body>
+
+</html>

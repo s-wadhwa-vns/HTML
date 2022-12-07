@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function bev() {
+        let radiobuttons = document.getElementsByName("Bev");
+        let n = radiobuttons.length;
+        for (let i = 0; i <= n - 1; i++) {
+            let radio = radiobuttons[i];
+           // console.log(radio.id + ":" + radio.checked);
+            localStorage.setItem(radio.id, radio.checked);
+        }
+    }
+
+    function Ret() {
+        // setItem(key,value)
+        //value=getItem(key)
+        let radiobuttons = document.getElementsByName("Bev");
+        let n = radiobuttons.length;
+        for (let i = 0; i <= n - 1; i++) {
+            let radio = radiobuttons[i];
+            let value = localStorage.getItem(radio.id);     
+           // console.log(radio.id + ":" + value);
+            if (value == "true")
+                document.getElementById(radio.id).checked = true;
+            else
+                document.getElementById(radio.id).checked = false;
+        }
+    }
+
+</script>
+
+<body>
+    Beverage: <br>
+    Fanta :             <input id="radFan"   name="Bev" type="radio"><br>
+    Cold Coffee :       <input id="radCof"   name="Bev" type="radio"><br>
+    Berry Shake :       <input id="radBerSh" name="Bev" type="radio"><br>
+    Coke :              <input id="radCok"   name="Bev" type="radio"><br>
+    Pepsi :             <input id="radPep"   name="Bev" type="radio"><br>
+    Beer :              <input id="radBer"   name="Bev" type="radio"><br>
+    Whisky :            <input id="radWhi"   name="Bev" type="radio"><br>
+
+    <Button onclick="bev()">Save</Button>
+    <button onclick="Ret()">Retrieve</button>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop image horizontal and vertical</title>
+</head>
+<style>
+img{
+    width: 200px;
+    height: 200px;
+}
+</style>
+<script>
+    const noofpic=4;
+    function f1(){
+        p3=document.getElementById("p0").src;
+        for(i=0; i<=noofpic-2; i++ ){
+            document.getElementById("p" + i).src=document.getElementById("p" + (i+1)).src;           
+        }
+         document.getElementById("p" + (noofpic-1)).src = p3;   
+    }
+    setInterval("f1()" , 1000);
+
+    const picnumber=4;
+    function f2(){
+        q3=document.getElementById("q3").src;
+
+        for (i=picnumber-1; i>=1; i--){
+            document.getElementById("q"+i).src=document.getElementById("q" + (i-1)).src;
+        }
+        document.getElementById("q0").src=q3;
+    }
+    setInterval("f2()" , 1000);
+</script>
+<!--
+    q0<-q1 , q1<-q2, q2<-q3, q3<-q0 ;
+
+    q3<-q2, q2<-q1, q1<-q0, q0<-q3;
+
+
+
+
+-->
+<body>
+
+    <table border="1">
+        <tr>
+            <td><img id="p0" src="../pics/Black Rose.jpg"></td>
+            <td><img id="q0" src="../pics/Bihar.avif"></td>
+            <td><img id="p1" src="../pics/Blue Rose.jpg"></td>
+            <td><img id="q1" src="../pics/varanasi.jpg"></td>
+            <td><img id="p2" src="../pics/Pink Rose.jpg"></td>
+            <td><img id="q2" src="../pics/UP Image.jpg"></td>
+            <td><img id="p3" src="../pics/Red Roses.jpg"></td>
+            <td><img id="q3" src="../pics/Gaya.jpg"></td>
+        </tr>
+    
+    
+</body>
+</html>

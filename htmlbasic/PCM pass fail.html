@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass OR Fail in PCM</title>
+</head>
+<script>
+    function f1() {
+        a = Number(document.getElementById("ph").value);
+        b = Number(document.getElementById("ch").value);
+        c = Number(document.getElementById("ma").value);
+        let x = 40;
+        percent = (a + b + c) / 3;
+        result = "Pass";
+        Failure = "Fail"
+        // if P=40 c=40 m=40 equals to PASS
+        // if p>40 OR c>40 OR m>40 Fail
+        if (a >= x && b >= x && c >= x) {
+            document.getElementById("h1").innerHTML = result;
+            //Code   12/5 
+            // percent=(a+b+c)/3;
+            document.getElementById("h2").innerHTML = percent;
+        }
+        else
+            if (a <= x || b <= x || c <= x) {
+                document.getElementById("h1").innerHTML = Failure;
+                // percent=(a+b+c)/3;
+                document.getElementById("h2").innerHTML = percent;
+            }
+
+    }
+</script>
+<!-- Equilateral 
+    Isosceles
+     Scalene -->
+
+<body>
+
+    <label> Physics: <input id="ph" type="number"></label> <br>
+    <label> Chemistry: <input id="ch" type="number"></label><br>
+    <label> Math: <input id="ma" type="number"></label><br>
+    <button onclick="f1()">Result</button>
+    <h1 id="h1"></h1>
+    <h2 id="h2"></h2>
+
+</body>
+
+</html>

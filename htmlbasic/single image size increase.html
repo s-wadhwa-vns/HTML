@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single image</title>
+<script>
+  function f1(){
+    var pc=document.getElementById("img");
+    pc.style.width="50%";
+    pc.style.left="25%";   
+} 
+//setInterval( "f1()" , 5000);
+
+var size=0;
+function f2(){
+let sz = document.getElementById("img");
+sz.style.width =size +  "%";
+//sz.style.height =size + "%";
+size+=8;
+if(size>80)
+clearInterval(loop);                   
+
+}
+var loop=setInterval("f2()" , 3000);
+
+// image should start from 0% to 80% in 10 sec
+
+
+
+</script>
+</head>
+<body>
+      
+    <img id="img" style="position: absolute; width:80%; height: 80%; left:10%; top:10%;"  src="../pics/Facebook_pic.png">
+    
+
+  <!-- <button onclick="f1()" type="submit">Submit</button> -->
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<script>
+    function f1() {
+
+        let selectedoption="";
+        if (document.getElementById("ADD").checked)
+            selectedoption = "Add";
+
+        if (document.getElementById("SUBs").checked)
+            selectedoption = "SUB";
+
+
+        let a = document.getElementById("A");
+        let b = document.getElementById("B");
+        let c = document.getElementById("C");
+
+        if (selectedoption == "Add") {
+            c.value = Number(a.value) + Number(b.value);
+        }
+
+        if (selectedoption == "SUB") {
+            c.value = a.value - (b.value);
+        }
+    }
+
+
+
+</script>
+
+<body>
+<label>A :</label>
+<input id="A" type="number"> <br>
+<label>B :</label>
+<input id="B" type="number"> <br>
+<label>C :</label>
+<input id="C" readonly type="number"><br>
+
+<label>Mathematical Action :</label><br>
+<label>ADD</label> <input id="ADD" type="radio" name="MA">
+<label>SUBs</label><input id="SUBs" type="radio" name="MA"> <br>
+<button onclick="f1()" type="submit">SUBMIT</button>
+
+</body>
+
+</html>
