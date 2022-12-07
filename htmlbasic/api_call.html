@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+    <script>
+        function dataResponse(data) {
+            console.log(data);
+            let output=JSON.stringify(data);
+            document.getElementById("d").innerHTML = output;
+                document.getElementById("txttit").value=data.title;
+                document.getElementById("numEpi").value=data.episode_id;
+                document.getElementById("txtareOpe").value=data.opening_crawl;
+                document.getElementById("txtDir").value=data.director;
+                document.getElementById("txtPro").value=data.producer;
+                document.getElementById("numRelDat").value=data.release_date;
+                let characters=data.characters;
+                let content="";
+                // <a href=' + currenturl + ' target='blank'>Current url</a>
+                for (let i=0; i<=characters.length-1; i++){
+                    content+="<br><a href='" + characters[i] + "' target='blank'>" + characters[i] + "</a>";     // content = content+1  
+                }
+                document.getElementById("divChar").innerHTML=content;
+
+              
+
+        }
+        function call() {
+            let vecnum = document.getElementById("numvec").value;
+            let url='https://swapi.py4e.com/api/films/1/'; //+ vecnum + "/";//
+            fetch(url)
+                .then((response) => response.json())
+                .then((data) => dataResponse(data));
+                
+        }
+       
+    </script>
+</head>
+
+<body>
+    <div id="d"></div>
+    <br>
+    
+   Title : <input id="txttit" type="text"><br>
+   Episode ID :  <input id="numEpi" type="number"><br>
+   opening_crawl : <textarea id="txtareOpe"></textarea> <br>
+   Director : <input id="txtDir" type="text"><br>
+   Producer :<input id="txtPro" type="text"><br>
+   Release Date : <input id="numRelDat" type="date"><br>
+   Characters : <div id="divChar"> </div>
+   <input id="numvec" type="number"><br>
+    <input type="button" value="Find" onclick="call()">
+    <script>
+
+        call();
+    </script>
+</body>
