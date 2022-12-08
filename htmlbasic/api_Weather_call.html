@@ -11,40 +11,48 @@
 
         function callapi(data) {
             let value = JSON.stringify(data);
-      //      document.getElementById("div").innerHTML = value;
-            document.getElementById("numLat").value=data.coord.lon;
-            document.getElementById("numLon").value=data.coord.lat;
-            document.getElementById("txtWet").value=data.weather[0].main;
-            document.getElementById("numTem").value=data.main.temp;
-            document.getElementById("numPre").value=data.main.pressure;
+            document.getElementById("div").innerHTML = value;
+            //    document.getElementById("numLat").value = data.coord.lon;
+            //  document.getElementById("numLon").value = data.coord.lat;
+            //       document.getElementById("txtWet").value=data.weather[0].main;
+            //       document.getElementById("numTem").value=data.main.temp;
+            //       document.getElementById("numPre").value=data.main.pressure;
+            let icon = data.weather[0].icon;
+            let url = 'https://openweathermap.org/img/w/' + icon + '.png'
+            console.log(url);
+            document.getElementById("img").src = url;
         }
 
         function call() {
-            let city = document.getElementById("txtCit").value;
-            let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=4a1f8a61b74546825af1e0be106e797b&units=metric'
-            console.log(url);
-            fetch(url)
+            //  let city = document.getElementById("txtCit").value;
+            let lat = document.getElementById("numLat").value;
+            let lon = document.getElementById("numLon").value;
+            //   let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=4a1f8a61b74546825af1e0be106e797b&units=metric'
+            let Url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=3420015b5f3af6337349e29897c67e0f'
+            console.log(Url);
+            fetch(Url)
                 .then((response) => response.json())
                 .then((data) => callapi(data));
         }
-       
+
 
     </script>
-    
+
 </head>
 
 <body>
 
-    City Name : <input value="pune" id="txtCit" type="text"><br>
-    Latitude : <input id="numLat" type="number"><br>
-    Longitude : <input id="numLon" type="number"><br>
-    Weather : <input id="txtWet" type="text"><br>
+    <!-- City Name : <input  id="txtCit" type="text"><br> -->
+    Latitude : <input value="18.5196" id="numLat" type="number"><br>
+    Longitude : <input value="73.8553" id="numLon" type="number"><br>
+    <img id="img">
+    <!-- Weather : <input id="txtWet" type="text"><br>
     Temperature : <input id="numTem" type="number"><br>
-    pressure : <input id="numPre" type="number"><br>
+    pressure : <input id="numPre" type="number"><br> -->
     <button onclick="call()">Find</button>
     <script> call();</script>
 
-    <!-- <div id="div"></div> -->
+    <div id="div"></div>
 
 </body>
 
