@@ -31,8 +31,8 @@
             let Url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=3420015b5f3af6337349e29897c67e0f'
             console.log(Url);
             fetch(Url)
-                .then((response) => response.json())
-                .then((data) => callapi(data));
+                .then((response) => response.json())           // ex :  .then(function (response) { return response.json(); })
+                .then((data) => callapi(data));                // ex :  .then(function (data) { dataResponse(data); });
         }
 
 
